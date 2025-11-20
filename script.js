@@ -3,11 +3,29 @@ function game() {
     let pWin = 0;
     let cWin = 0;
 
-    for(let i = 0; i < 5; i++) {
-        let playerSelection = prompt("Do you choose rock, paper or scissors?");
-        playerSelection.toLowerCase();
+    const choiceRock = document.getElementById("rock");
+    const choicePaper = document.getElementById("paper");
+    const choiceScissors = document.getElementById("scissors");
+
+
+    choiceRock.addEventListener("click", (event) => {
+        event.preventDefault();
+        playRound("rock");
+    })
+    choicePaper.addEventListener("click", (event) => {
+        event.preventDefault();
+        playRound("paper");
+    })
+    choiceScissors.addEventListener("click", (event) => {
+        event.preventDefault();
+        playRound("scissors");
+    })
+
+    function playRound(choice){
+        const playerChoice = choice;
 
         const computerSelection = getComputerChoice();
+
         function getComputerChoice() {
             let computerChoice = 0;
             switch(Math.floor(Math.random() * 3) + 1) {
@@ -27,7 +45,13 @@ function game() {
             return computerChoice;
         }
 
-        if(playerSelection == 'rock') {
+        //const playerSelection = document.querySelector("button");
+            
+        // const playerChoice = playerSelection.innerText;
+
+        console.log(playerChoice);
+
+        if(playerChoice == 'rock') {
             if(computerSelection == 'rock') {
                 console.log('It is a tie!')
             } else if(computerSelection == 'paper') {
@@ -37,7 +61,7 @@ function game() {
                 console.log('You win! Rock beats scissors.')
                 pWin++;
             }
-        } else if(playerSelection == 'paper') {
+        } else if(playerChoice == 'paper') {
             if(computerSelection == 'rock') {
                 console.log('You win! Paper beats rock.')
                 pWin++;
@@ -59,6 +83,7 @@ function game() {
             }
         }
     }
+
     if(pWin > cWin) {
         console.log("Congratulations! You beat the computer " + pWin + " to " + cWin + ".")
     } else if(cWin > pWin) {
