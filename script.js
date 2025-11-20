@@ -7,6 +7,9 @@ function game() {
     const choicePaper = document.getElementById("paper");
     const choiceScissors = document.getElementById("scissors");
 
+    const playerScore = document.getElementById("playerScore");
+    const computerScore = document.getElementById("computerScore");
+    const gameHistory = document.getElementById("gameHistory");
 
     choiceRock.addEventListener("click", (event) => {
         event.preventDefault();
@@ -31,23 +34,19 @@ function game() {
             switch(Math.floor(Math.random() * 3) + 1) {
                 case 1:
                     computerChoice = 'rock'
-                    console.log('computer plays rock')
+                    gameHistory.textContent = 'computer plays rock'
                     break;
                 case 2:
                     computerChoice = 'paper'
-                    console.log('computer plays paper')
+                    gameHistory.textContent = 'computer plays paper'
                     break;
                 case 3:
                     computerChoice = 'scissors'
-                    console.log('computer plays scissors')
+                    gameHistory.textContent = 'computer plays scissors'
                     break;
             }
             return computerChoice;
         }
-
-        //const playerSelection = document.querySelector("button");
-            
-        // const playerChoice = playerSelection.innerText;
 
         console.log(playerChoice);
 
