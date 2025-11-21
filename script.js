@@ -64,56 +64,74 @@ function game() {
                 pChoice.textContent = 'Player plays rock'
                 gameHistory.appendChild(gameOutcome);
                 gameOutcome.textContent = ('It is a tie!')
+                computerScore.textContent = ("Computer Score: " + cWin);
+                playerScore.textContent = ("Player Score: " + pWin);
             } else if(computerSelection == 'paper') {
                 gameHistory.appendChild(pChoice);
                 pChoice.textContent = 'Player plays rock'
                 gameHistory.appendChild(gameOutcome);
-                gameOutcome.textContent = ('It is a tie!')
+                gameOutcome.textContent = ('Computer wins!')
                 cWin++;
+                computerScore.textContent = ("Computer Score: " + cWin);
+                playerScore.textContent = ("Player Score: " + pWin);
             } else {
                 gameHistory.appendChild(pChoice);
                 pChoice.textContent = 'Player plays rock'
                 gameHistory.appendChild(gameOutcome);
-                gameOutcome.textContent = ('It is a tie!')
+                gameOutcome.textContent = ('Player wins!')
                 pWin++;
+                computerScore.textContent = ("Computer Score: " + cWin);
+                playerScore.textContent = ("Player Score: " + pWin);
             }
         } else if(playerChoice == 'paper') {
             if(computerSelection == 'rock') {
                 gameHistory.appendChild(pChoice);
                 pChoice.textContent = 'Player plays paper'
                 gameHistory.appendChild(gameOutcome);
-                gameOutcome.textContent = ('It is a tie!')
+                gameOutcome.textContent = ('Player wins!')
                 pWin++;
+                computerScore.textContent = ("Computer Score: " + cWin);
+                playerScore.textContent = ("Player Score: " + pWin);
             } else if(computerSelection == 'paper') {
                 gameHistory.appendChild(pChoice);
                 pChoice.textContent = 'Player plays paper'
                 gameHistory.appendChild(gameOutcome);
                 gameOutcome.textContent = ('It is a tie!')
+                computerScore.textContent = ("Computer Score: " + cWin);
+                playerScore.textContent = ("Player Score: " + pWin);
             } else {
                 gameHistory.appendChild(pChoice);
                 pChoice.textContent = 'Player plays paper'
                 gameHistory.appendChild(gameOutcome);
-                gameOutcome.textContent = ('It is a tie!')
+                gameOutcome.textContent = ('Computer wins!')
                 cWin++;
+                computerScore.textContent = ("Computer Score: " + cWin);
+                playerScore.textContent = ("Player Score: " + pWin);
             }
         } else {
             if(computerSelection == 'rock') {
                 gameHistory.appendChild(pChoice);
                 pChoice.textContent = 'Player plays scissors'
                 gameHistory.appendChild(gameOutcome);
-                gameOutcome.textContent = ('It is a tie!')
+                gameOutcome.textContent = ('Computer wins!')
                 cWin++;
+                computerScore.textContent = ("Computer Score: " + cWin);
+                playerScore.textContent = ("Player Score: " + pWin);
             } else if(computerSelection == 'paper') {
                 gameHistory.appendChild(pChoice);
                 pChoice.textContent = 'Player plays scissors'
                 gameHistory.appendChild(gameOutcome);
-                gameOutcome.textContent = ('It is a tie!')
+                gameOutcome.textContent = ('Player wins!')
                 pWin++;
+                computerScore.textContent = ("Computer Score: " + cWin);
+                playerScore.textContent = ("Player Score: " + pWin);
             } else {
                 gameHistory.appendChild(pChoice);
                 pChoice.textContent = 'Player plays scissors'
                 gameHistory.appendChild(gameOutcome);
                 gameOutcome.textContent = ('It is a tie!')
+                computerScore.textContent = ("Computer Score: " + cWin);
+                playerScore.textContent = ("Player Score: " + pWin);
             }
         }
     }
