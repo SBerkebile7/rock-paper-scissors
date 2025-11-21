@@ -30,19 +30,24 @@ function game() {
         const computerSelection = getComputerChoice();
 
         function getComputerChoice() {
+        const compChoice = document.createElement("span");
+
             let computerChoice = 0;
             switch(Math.floor(Math.random() * 3) + 1) {
                 case 1:
                     computerChoice = 'rock'
-                    gameHistory.textContent = 'computer plays rock'
+                    gameHistory.appendChild(compChoice);
+                    compChoice.textContent = 'Computer plays rock'
                     break;
                 case 2:
                     computerChoice = 'paper'
-                    gameHistory.textContent = 'computer plays paper'
+                    gameHistory.appendChild(compChoice);
+                    compChoice.textContent = 'Computer plays paper'
                     break;
                 case 3:
                     computerChoice = 'scissors'
-                    gameHistory.textContent = 'computer plays scissors'
+                    gameHistory.appendChild(compChoice);
+                    compChoice.textContent = 'Computer plays scissors'
                     break;
             }
             return computerChoice;
@@ -50,42 +55,72 @@ function game() {
 
         console.log(playerChoice);
 
+        const pChoice = document.createElement("span");
+        const gameOutcome = document.createElement("span");
+
         if(playerChoice == 'rock') {
             if(computerSelection == 'rock') {
-                console.log('It is a tie!')
+                gameHistory.appendChild(pChoice);
+                pChoice.textContent = 'Player plays rock'
+                gameHistory.appendChild(gameOutcome);
+                gameOutcome.textContent = ('It is a tie!')
             } else if(computerSelection == 'paper') {
-                console.log('You lose! Paper beats rock.')
+                gameHistory.appendChild(pChoice);
+                pChoice.textContent = 'Player plays rock'
+                gameHistory.appendChild(gameOutcome);
+                gameOutcome.textContent = ('It is a tie!')
                 cWin++;
             } else {
-                console.log('You win! Rock beats scissors.')
+                gameHistory.appendChild(pChoice);
+                pChoice.textContent = 'Player plays rock'
+                gameHistory.appendChild(gameOutcome);
+                gameOutcome.textContent = ('It is a tie!')
                 pWin++;
             }
         } else if(playerChoice == 'paper') {
             if(computerSelection == 'rock') {
-                console.log('You win! Paper beats rock.')
+                gameHistory.appendChild(pChoice);
+                pChoice.textContent = 'Player plays paper'
+                gameHistory.appendChild(gameOutcome);
+                gameOutcome.textContent = ('It is a tie!')
                 pWin++;
             } else if(computerSelection == 'paper') {
-                console.log('It is a tie!')
+                gameHistory.appendChild(pChoice);
+                pChoice.textContent = 'Player plays paper'
+                gameHistory.appendChild(gameOutcome);
+                gameOutcome.textContent = ('It is a tie!')
             } else {
-                console.log('You lose! Scissors beats paper.')
+                gameHistory.appendChild(pChoice);
+                pChoice.textContent = 'Player plays paper'
+                gameHistory.appendChild(gameOutcome);
+                gameOutcome.textContent = ('It is a tie!')
                 cWin++;
             }
         } else {
             if(computerSelection == 'rock') {
-                console.log('You lose! Rock beats scissors.')
+                gameHistory.appendChild(pChoice);
+                pChoice.textContent = 'Player plays scissors'
+                gameHistory.appendChild(gameOutcome);
+                gameOutcome.textContent = ('It is a tie!')
                 cWin++;
             } else if(computerSelection == 'paper') {
-                console.log('You win! Scissors beats paper.')
+                gameHistory.appendChild(pChoice);
+                pChoice.textContent = 'Player plays scissors'
+                gameHistory.appendChild(gameOutcome);
+                gameOutcome.textContent = ('It is a tie!')
                 pWin++;
             } else {
-                console.log('It is a tie!')
+                gameHistory.appendChild(pChoice);
+                pChoice.textContent = 'Player plays scissors'
+                gameHistory.appendChild(gameOutcome);
+                gameOutcome.textContent = ('It is a tie!')
             }
         }
     }
 
-    if(pWin > cWin) {
+    if(pWin == 3) {
         console.log("Congratulations! You beat the computer " + pWin + " to " + cWin + ".")
-    } else if(cWin > pWin) {
+    } else if(cWin == 3) {
         console.log('Oh no! You lost to the computer ' + cWin + " to " + pWin + ".'")
     } else {
         console.log("It is a tie with a score of " + pWin + " and " + cWin + ".")
