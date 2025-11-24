@@ -114,9 +114,9 @@ function game() {
         }
     }
 
-    if(pWin == 3) {
+    if(pWin == 5) {
         console.log("Congratulations! You beat the computer " + pWin + " to " + cWin + ".")
-    } else if(cWin == 3) {
+    } else if(cWin == 5) {
         console.log('Oh no! You lost to the computer ' + cWin + " to " + pWin + ".'")
     } else {
         console.log("It is a tie with a score of " + pWin + " and " + cWin + ".")
